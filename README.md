@@ -11,7 +11,7 @@ Sistema completo de geração de cardápios personalizados usando **Groq LLM** c
 - **dotenv** (Variáveis de ambiente)
 
 ### Frontend
-- **HTML5** + **CSS3** + **JavaScript Vanilla**
+- **HTML5** + **CSS3** + **JavaScript**
 - Design responsivo
 - Animações CSS avançadas
 - Paleta de cores vermelha premium
@@ -154,4 +154,5 @@ cardapio-inteligente/
 - **Animações Suaves**: Transições e efeitos CSS
 - **Responsivo**: Funciona em desktop, tablet e mobile
 - **Loading States**: Feedback visual durante operações
+
 - **Notificações**: Sistema de toast para feedback
