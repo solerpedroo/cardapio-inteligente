@@ -27,7 +27,7 @@ Sistema completo de geração de cardápios personalizados usando **Groq LLM** c
 ### 1. Clone ou baixe o projeto
 
 ```bash
-git clone <seu-repositorio>
+git clone <github.com/solerpedroo/cardapio-inteligente>
 cd cardapio-inteligente
 ```
 
@@ -154,5 +154,3 @@ cardapio-inteligente/
 - **Animações Suaves**: Transições e efeitos CSS
 - **Responsivo**: Funciona em desktop, tablet e mobile
 - **Loading States**: Feedback visual durante operações
-
-- **Notificações**: Sistema de toast para feedback
