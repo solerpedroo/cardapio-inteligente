@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio Inteligente</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23EA1D2C'/><path d='M16 6L8 10L16 14L24 10L16 6Z' fill='white'/><path d='M8 20L16 24L24 20' stroke='white' stroke-width='2'/><path d='M8 14L16 18L24 14' stroke='white' stroke-width='2'/></svg>">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="currentColor"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <h1>Cardápio<span class="highlight">AI</span></h1>
+                </div>
+                <nav class="nav">
+                    <button class="nav-btn active" data-section="gerar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        <span>Novo Cardápio</span>
+                    </button>
+                    <button class="nav-btn" data-section="historico">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/>
+                        </svg>
+                        <span>Histórico</span>
+                    </button>
+                    <button class="nav-btn" data-section="favoritos">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <span>Favoritos</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Desenvolvido por Pedro Soler</span>
+                    </div>
+                    <h2 class="hero-title">Geração Inteligente de Cardápios</h2>
+                    <p class="hero-subtitle">Crie cardápios personalizados com tecnologia de inteligência artificial avançada</p>
+                </div>
+            </section>
+
+            <!-- Seção: Gerar Cardápio -->
+            <section id="gerar" class="section active">
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Configuração do Cardápio</h3>
+                        <p class="card-subtitle">Preencha os campos abaixo para gerar seu cardápio personalizado</p>
+                    </div>
+                    
+                    <form id="formCardapio" class="form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="tipoRefeicao">Tipo de Refeição</label>
+                                <select id="tipoRefeicao" required>
+                                    <option value="">Selecione o tipo</option>
+                                    <option value="Café da manhã">Café da manhã</option>
+                                    <option value="Brunch">Brunch</option>
+                                    <option value="Almoço">Almoço</option>
+                                    <option value="Jantar">Jantar</option>
+                                    <option value="Lanche">Lanche</option>
+                                    <option value="Festa">Festa</option>
+                                    <option value="Evento Corporativo">Evento Corporativo</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ocasiao">Ocasião</label>
+                                <input type="text" id="ocasiao" placeholder="Ex: Aniversário, Jantar de negócios">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="numeroPessoas">Número de Pessoas</label>
+                                <input type="number" id="numeroPessoas" min="1" max="100" value="4" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="orcamento">Orçamento (R$)</label>
+                                <input type="number" id="orcamento" min="0" step="50" placeholder="Ex: 500">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="preferencias">Preferências Alimentares</label>
+                            <textarea id="preferencias" rows="2" placeholder="Ex: Comida italiana, frutos do mar, vegetariana"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="restricoes">Restrições Alimentares</label>
+                            <textarea id="restricoes" rows="2" placeholder="Ex: Sem glúten, sem lactose, vegano"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="btnGerar">
+                            <span class="btn-text">Gerar Cardápio</span>
+                            <span class="btn-loader"></span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Resultado -->
+                <div id="resultado" class="resultado hidden">
+                    <div class="card resultado-card">
+                        <div class="resultado-header">
+                            <div>
+                                <h3 id="resultadoTitulo" class="resultado-titulo"></h3>
+                                <p id="resultadoDescricao" class="resultado-descricao"></p>
+                            </div>
+                            <div class="resultado-badges">
+                                <span class="badge" id="badgeTempo"></span>
+                                <span class="badge" id="badgeTokens"></span>
+                            </div>
+                        </div>
+                        
+                        <div id="pratos" class="pratos-grid"></div>
+
+                        <div id="dicas" class="dicas-section hidden">
+                            <h4 class="dicas-title">Dicas do Chef</h4>
+                            <ul id="listaDicas" class="dicas-list"></ul>
+                        </div>
+
+                        <div class="resultado-footer">
+                            <div class="tempo-info">
+                                <span class="tempo-label">Tempo Total de Preparo:</span>
+                                <span id="tempoTotal" class="tempo-value"></span>
+                            </div>
+                            <button class="btn btn-secondary" id="btnSalvarFavorito">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                Salvar nos Favoritos
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção: Histórico -->
+            <section id="historico" class="section">
+                <div class="section-header">
+                    <div>
+                        <h3>Histórico de Cardápios</h3>
+                        <p class="section-subtitle">Visualize todos os cardápios gerados anteriormente</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" id="btnCarregarHistorico">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                        </svg>
+                        Atualizar
+                    </button>
+                </div>
+                <div id="listaHistorico" class="cards-grid"></div>
+            </section>
+
+            <!-- Seção: Favoritos -->
+            <section id="favoritos" class="section">
+                <div class="section-header">
+                    <div>
+                        <h3>Cardápios Favoritos</h3>
+                        <p class="section-subtitle">Seus cardápios salvos para acesso rápido</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" id="btnCarregarFavoritos">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                        </svg>
+                        Atualizar
+                    </button>
+                </div>
+                <div id="listaFavoritos" class="cards-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Cardápio Inteligente. Todos os direitos reservados - Pedro Soler</p>
+                <p class="footer-tech">Desenvolvido com <strong>Groq AI Technology (LLM)</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Gerando seu cardápio...</p>
+            <p class="loading-subtext">Processando com IA</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
